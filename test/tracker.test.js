@@ -21,6 +21,8 @@ test('toProductJsUrl normalizes product URLs', () => {
     `${PAGE}.js`,
   );
   assert.throws(() => toProductJsUrl('https://shop.maccabi-tlv.co.il/collections/retro'));
+  assert.throws(() => toProductJsUrl('javascript:alert(1)//products/x'), /http\(s\)/);
+  assert.throws(() => toProductJsUrl('ftp://shop.example.com/products/x'), /http\(s\)/);
 });
 
 test('matchVariants reads availability per size', () => {
