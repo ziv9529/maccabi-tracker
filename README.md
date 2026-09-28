@@ -47,14 +47,14 @@ The workflows run from the default branch (`main`), so merge this branch first. 
 2. The check runs right away for the new item. About a minute later, **Edit sizes** shows the product's real sizes and whether each is in stock.
 3. Each item shows its status per size, a **Buy** button when a size is in stock, **Edit sizes** and **Remove**.
 
-## Timing notes
+## Timing
 
-- `*/5 * * * *` is the fastest schedule GitHub allows. Under load, GitHub often delays scheduled runs by several minutes.
-- For more exact timing, create a free job on [cron-job.org](https://cron-job.org) that calls the workflow every 5 minutes:
-  - `POST https://api.github.com/repos/<user>/maccabi-tracker/actions/workflows/check.yml/dispatches`
-  - Headers: `Authorization: Bearer <PAT with Actions: write>` and `Accept: application/vnd.github+json`
-  - Body: `{"ref":"main"}`
-- GitHub turns off cron workflows after 60 days without repo activity. `keepalive.yml` re-enables them monthly through the API.
+- The check runs every 5 minutes on GitHub's own scheduler. It's free, because Actions minutes are free for public repos.
+- GitHub's scheduler is best effort:
+  - Runs can start a few minutes late, and some are skipped when GitHub is busy.
+  - After any change to `.github/workflows/check.yml`, the schedule can take up to about an hour to start again.
+- Editing the watchlist from the page, or pressing **Check now**, runs a check immediately.
+- `keepalive.yml` stops GitHub from switching the schedule off after 60 days without repo activity.
 
 ## Security
 
