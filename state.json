@@ -26,6 +26,33 @@
       "unknownSizes": [],
       "error": null,
       "lastChangeAt": "2026-09-28T15:29:02.850Z"
+    },
+    "yap3m58z": {
+      "url": "https://shop.maccabi-tlv.co.il/products/%D7%97%D7%95%D7%9C%D7%A6%D7%AA-%D7%A8%D7%98%D7%A8%D7%95-%D7%97%D7%95%D7%A5-2000-01",
+      "title": "חולצת רטרו חוץ 2000/01",
+      "image": "https://cdn.shopify.com/s/files/1/0757/2350/5889/files/jpg_8075dc63-95e8-445d-b1c4-606282195c14.jpg?v=1771580129",
+      "price": 19900,
+      "allSizes": [
+        "L",
+        "M",
+        "S",
+        "XL",
+        "XS",
+        "XXL"
+      ],
+      "sizes": {
+        "XL": {
+          "available": false,
+          "variantId": 47503735554273
+        },
+        "XXL": {
+          "available": false,
+          "variantId": 47503735619809
+        }
+      },
+      "unknownSizes": [],
+      "error": null,
+      "lastChangeAt": "2026-09-28T15:29:38.264Z"
     }
   }
 }
