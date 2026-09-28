@@ -1,1 +1,31 @@
-{ "items": {} }
+{
+  "items": {
+    "retro-home-2000-01": {
+      "url": "https://shop.maccabi-tlv.co.il/products/%D7%97%D7%95%D7%9C%D7%A6%D7%AA-%D7%A8%D7%98%D7%A8%D7%95-%D7%91%D7%99%D7%AA-2000-01",
+      "title": "חולצת רטרו בית 2000/01",
+      "image": "https://cdn.shopify.com/s/files/1/0757/2350/5889/files/jpg_27983c44-17c3-4c66-9224-45811b4a4b05.jpg?v=1771580251",
+      "price": 19900,
+      "allSizes": [
+        "L",
+        "M",
+        "S",
+        "XL",
+        "XS",
+        "XXL"
+      ],
+      "sizes": {
+        "XL": {
+          "available": false,
+          "variantId": 47503735357665
+        },
+        "XXL": {
+          "available": false,
+          "variantId": 47503735423201
+        }
+      },
+      "unknownSizes": [],
+      "error": null,
+      "lastChangeAt": "2026-09-28T15:11:51.254Z"
+    }
+  }
+}
