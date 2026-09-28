@@ -7,6 +7,9 @@ const USER_AGENT =
 /** Normalize any product page URL to its `.js` JSON endpoint. */
 export function toProductJsUrl(input) {
   const url = new URL(String(input).trim());
+  if (url.protocol !== 'https:' && url.protocol !== 'http:') {
+    throw new Error(`Only http(s) product URLs are supported: ${input}`);
+  }
   const parts = url.pathname.split('/').filter(Boolean);
   const idx = parts.lastIndexOf('products');
   if (idx === -1 || !parts[idx + 1]) {

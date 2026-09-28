@@ -43,8 +43,8 @@ The workflows run from the default branch (`main`), so merge this branch first. 
 
 ### Using the UI
 
-1. Paste a product link and click **Load sizes**. If the shop allows it, you see the real sizes with their live status. Otherwise you pick from common sizes (XS–3XL or a custom one).
-2. Select one or more sizes and click **Start tracking**. The Action runs right away for the new item.
+1. Paste a product link, click **Next**, pick one or more sizes and click **Start tracking**.
+2. The check runs right away for the new item. About a minute later, **Edit sizes** shows the product's real sizes and whether each is in stock.
 3. Each item shows its status per size, a **Buy** button when a size is in stock, **Edit sizes** and **Remove**.
 
 ## Timing notes
@@ -55,6 +55,29 @@ The workflows run from the default branch (`main`), so merge this branch first. 
   - Headers: `Authorization: Bearer <PAT with Actions: write>` and `Accept: application/vnd.github+json`
   - Body: `{"ref":"main"}`
 - GitHub turns off cron workflows after 60 days without repo activity. `keepalive.yml` re-enables them monthly through the API.
+
+## Security
+
+**What's public:** the page, the code, `watchlist.json` (what you track) and `state.json` (stock status). There are no secrets in any of them. A visitor without your token can only look.
+
+**What's private:**
+- The Telegram bot token and chat id are stored as GitHub Actions secrets. They are masked in logs and never given to pull requests from forks.
+- Your GitHub token is typed into the page and kept only in your browser. It is sent only to `api.github.com`.
+
+**How to create the token:**
+- Make it a **fine-grained** token, with *Only select repositories* set to `maccabi-tracker`.
+- Grant **Contents: Read and write** and **Actions: Read and write**. Grant nothing else, and in particular **not Workflows**, so the token can't change the workflow files.
+- Set an **expiration**, for example 90 days. Revoke it anytime at <https://github.com/settings/personal-access-tokens>.
+
+**Remembering the token:** leave "Remember on this device" off on shared or public computers. The token is then forgotten when the tab closes.
+
+**If the token ever leaked,** someone could edit your watchlist or trigger checks, and that's all. They could not read your Telegram secrets or touch other repos. Revoke the token and create a new one.
+
+**Page hardening:**
+- A strict Content-Security-Policy runs only the page's own script.
+- The page connects only to `api.github.com` and loads images only from `cdn.shopify.com`, so injected code couldn't send the token elsewhere.
+- Shop data is HTML-escaped, and product links must be `http(s)`.
+- The workflow actions are pinned to commit SHAs.
 
 ## Local usage
 
