@@ -1,0 +1,13 @@
+{
+  "name": "maccabi-tracker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Free restock tracker for Shopify products, running on GitHub Actions with Telegram alerts",
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "check": "node src/check.js",
+    "check:dry": "node src/check.js --dry-run",
+    "test": "node --test test/*.test.js"
+  }
+}
