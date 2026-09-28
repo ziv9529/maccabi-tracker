@@ -21,23 +21,11 @@
         "XXL": {
           "available": false,
           "variantId": 47503735423201
-        },
-        "S": {
-          "available": false,
-          "variantId": 47503735324897
-        },
-        "M": {
-          "available": false,
-          "variantId": 47503735292129
-        },
-        "XS": {
-          "available": true,
-          "variantId": 47503735390433
         }
       },
       "unknownSizes": [],
       "error": null,
-      "lastChangeAt": "2026-09-28T15:28:05.037Z"
+      "lastChangeAt": "2026-09-28T15:29:02.850Z"
     }
   }
 }
