@@ -24,7 +24,7 @@
         }
       },
       "unknownSizes": [],
-      "error": "Product not found (404)",
+      "error": null,
       "lastChangeAt": "2026-09-28T15:29:02.850Z"
     },
     "yap3m58z": {
@@ -42,7 +42,7 @@
       ],
       "sizes": {
         "XL": {
-          "available": false,
+          "available": true,
           "variantId": 47503735554273
         },
         "XXL": {
@@ -51,8 +51,8 @@
         }
       },
       "unknownSizes": [],
-      "error": "Product not found (404)",
-      "lastChangeAt": "2026-09-28T15:29:38.264Z"
+      "error": null,
+      "lastChangeAt": "2026-10-27T13:32:38.838Z"
     }
   }
 }
