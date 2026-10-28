@@ -42,7 +42,7 @@
       ],
       "sizes": {
         "XL": {
-          "available": true,
+          "available": false,
           "variantId": 47503735554273
         },
         "XXL": {
@@ -52,7 +52,7 @@
       },
       "unknownSizes": [],
       "error": null,
-      "lastChangeAt": "2026-10-27T13:32:38.838Z"
+      "lastChangeAt": "2026-10-28T07:23:20.818Z"
     }
   }
 }
